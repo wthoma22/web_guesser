@@ -6,7 +6,7 @@ secret_number = rand(100)
 background = 'white'
 
 get '/' do
-  if params["guess"]
+  if params["guess"] != nil
     guess = params["guess"].to_i
     message = check_guess(secret_number, guess)
     background = background_color(message)
